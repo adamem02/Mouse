@@ -1,0 +1,27 @@
+<!-- views/create-post.handlebars -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a New Post - Tech Blog</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <h1>Create a New Blog Post</h1>
+
+  <form action="/dashboard/create" method="POST">
+    <label for="title">Title:</label>
+    <input type="text" name="title" required>
+    <label for="content">Content:</label>
+    <textarea name="content" rows="4" required></textarea>
+    <button type="submit">Create Post</button>
+  </form>
+
+  <!-- Add any additional HTML content or scripts here -->
+
+</body>
+</html>
+

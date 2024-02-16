@@ -1,0 +1,49 @@
+<!-- views/home.handlebars -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* Add your additional styles here */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+    }
+    .post {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+    /* Add more styles as needed */
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to the Tech Blog!</h1>
+
+  {{#each posts}}
+    <div class="post">
+      <h2>{{this.title}}</h2>
+      <p>By {{this.user.username}}</p>
+      <p>{{{this.content}}}</p>
+      <ul>
+        {{#each this.comments}}
+          <li>{{{this.content}}} by {{this.user.username}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/each}}
+
+  <!-- Additional scripts or content specific to this page -->
+  <script>
+    // Add your additional scripts here
+    // For example, you can include client-side logic or interact with the DOM
+  </script>
+
+</body>
+</html>
