@@ -3,24 +3,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Tech Blog</title>
-  <link rel="stylesheet" href="public/css/style.css">
+  <!-- ... (your head content) ... -->
 </head>
 <body>
 
   <h1>Login to Your Account</h1>
 
+  {{#if errorMessage}}
+    <p style="color: red;">{{errorMessage}}</p>
+  {{/if}}
+
   <form action="/login" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" name="username" required>
-    <label for="password">Password:</label>
-    <input type="password" name="password" required>
-    <button type="submit">Login</button>
+    <!-- ... (your form content) ... -->
   </form>
 
-  <!-- Add any additional HTML content or scripts here -->
+  <!-- ... (any additional content or scripts) ... -->
 
 </body>
 </html>

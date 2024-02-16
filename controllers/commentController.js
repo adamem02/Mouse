@@ -4,7 +4,7 @@ const { Comment, User } = require('../models');
 
 
 const commentController = {
-  // Get all comments for a post
+ 
   getCommentsByPostId: async (req, res) => {
     try {
       const { postId } = req.params;
@@ -19,7 +19,7 @@ const commentController = {
     }
   },
 
-  // Create a new comment for a post
+
   createComment: async (req, res) => {
     try {
       const { postId, content } = req.body;
@@ -34,7 +34,7 @@ const commentController = {
     }
   },
 
-  // Update a comment by ID
+
   updateCommentById: async (req, res) => {
     try {
       const { id } = req.params;
@@ -53,7 +53,7 @@ const commentController = {
     }
   },
 
-  // Delete a comment by ID
+
   deleteCommentById: async (req, res) => {
     try {
       const { id } = req.params;

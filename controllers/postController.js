@@ -3,21 +3,21 @@ const router = express.Router();
 const { Post, User, Comment } = require('../models');
 
 const postController = {
-  // Get all posts
+ 
   getAllPosts: async (req, res) => {
     try {
       const posts = await Post.findAll({
         include: [{ model: User, attributes: ['username'] }, { model: Comment, attributes: ['content'], include: { model: User, attributes: ['username'] } }],
       });
 
-      res.render('posts', { posts }); // Adjust the view name based on your preference
+      res.render('posts', { posts }); 
     } catch (err) {
       console.error(err);
       res.status(500).json({ message: 'Internal server error' });
     }
   },
 
-  // Get a specific post by ID
+
   getPostById: async (req, res) => {
     try {
       const postId = req.params.id;
@@ -29,7 +29,7 @@ const postController = {
         return res.status(404).json({ message: 'Post not found' });
       }
 
-      res.render('post', { post }); // Adjust the view name based on your preference
+      res.render('post', { post }); 
     } catch (err) {
       console.error(err);
       res.status(500).json({ message: 'Internal server error' });
@@ -40,7 +40,7 @@ const postController = {
   createPost: async (req, res) => {
     try {
       const { title, content } = req.body;
-      const userId = req.session.user.id; // Assuming you store the user ID in the session after login
+      const userId = req.session.user.id; 
 
       const newPost = await Post.create({ title, content, user_id: userId });
 
@@ -51,7 +51,7 @@ const postController = {
     }
   },
 
-  // Update a post by ID
+
   updatePost: async (req, res) => {
     try {
       const postId = req.params.id;
@@ -70,7 +70,7 @@ const postController = {
     }
   },
 
-  // Delete a post by ID
+
   deletePost: async (req, res) => {
     try {
       const postId = req.params.id;
